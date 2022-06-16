@@ -73,11 +73,11 @@ const Orders = () => {
 
   return (
     <>
-      {loading ? (
-        <Spinner />
-      ) : currentUser ? (
+      {currentUser ? (
         <>
-          {listData.length > 0 ? (
+          {loading ? (
+            <Spinner />
+          ) : listData.length > 0 ? (
             <div>
               <OrderContainer>
                 <div
@@ -103,7 +103,7 @@ const Orders = () => {
                         alignItems: "space-between",
                         justifyContent: "space-between",
                         marginBottom: "3%",
-                        padding: "15px 0 90px 0",
+                        padding: "15px 0 80px 0",
                       }}
                     >
                       <span style={{ marginLeft: "-5%" }}>

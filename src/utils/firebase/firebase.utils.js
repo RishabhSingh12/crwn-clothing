@@ -19,6 +19,7 @@ import {
   query,
   getDocs,
 } from "firebase/firestore";
+import { orderBy } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCC0k46gegRsX1_aLKo7nS9diXRX253rpA",
@@ -73,7 +74,7 @@ export const getCategoriesAndDocuments = async () => {
 //orders
 export const getOrders = async (userid) => {
   const docRef = collection(db, "orders");
-  const q = query(docRef);
+  const q = query(docRef, orderBy("created", "desc"));
 
   const querySnap = await getDocs(q);
   let newSnapData = [];
