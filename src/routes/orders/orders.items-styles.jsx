@@ -2,33 +2,38 @@ import styled from "styled-components";
 
 export const OrderContainer = styled.div`
   width: 100%;
+  // height: full-screen;
   display: flex;
   flex-direction: column;
   min-height: 100px;
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
-  h1 {
-    margin-right: 60%;
-    padding: 4px;
-  }
+  justify-content: space-between;
+  // h1 {
+  //   margin-right: 60%;
+  //   padding: 4px;
+  // }
 `;
 export const Container = styled.div`
-  width: 70%;
+  width: 82%;
+  min-width: 50%;
   display: flex;
   min-height: 80px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
-  width: 23%;
+  width: 27%;
   padding-right: 15px;
   object-fit: contain;
   img {
-    width: 50%;
+    width: 45%;
+    object-fit: contain;
   }
 `;
 

@@ -1,25 +1,20 @@
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button, {
   BUTTON_TYPE_CLASSES,
 } from "../../components/button/button.component";
+import Spinner from "../../components/spinner/spinner.component";
 import { selectCurrentUser } from "../../store/user/user.selector";
-import { db, getOrders } from "../../utils/firebase/firebase.utils";
-import {
-  OrderContainer,
-  ImageContainer,
-  BaseSpan,
-  Quantity,
-  Value,
-  Container,
-  Amount,
-  ButtonsContainer,
-} from "./orders-items-styles";
+import { getOrders } from "../../utils/firebase/firebase.utils";
+import OrderList from "./orderlist.component";
+import { OrderContainer, ButtonsContainer } from "./orders.items-styles";
 
 const Orders = () => {
   const currentUser = useSelector(selectCurrentUser);
   const [listData, setListData] = useState([]);
+  const [created, setCreated] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -40,23 +35,27 @@ const Orders = () => {
     // fetchListing();
 
     const fetchListing = async () => {
+      setLoading(true);
       if (currentUser) {
         const docSnap = await getOrders(currentUser?.id);
 
         if (docSnap) {
+          // const items = docSnap.map((item) => item);
+          // console.log(items);
           setListData(docSnap);
+          setLoading(false);
         }
       }
     };
     fetchListing();
   }, [currentUser]);
 
-  let amt = 0;
-  for (let i = 0; i < listData.length; i++) {
-    if (currentUser?.id === listData[i].id) {
-      amt += listData[i].amount;
-    }
-  }
+  // let amt = 0;
+  // for (let i = 0; i < listData.length; i++) {
+  //   if (currentUser?.id === listData[i].id) {
+  //     amt += listData[i].amount;
+  //   }
+  // }
 
   // console.log(listData);
 
@@ -74,7 +73,9 @@ const Orders = () => {
 
   return (
     <>
-      {currentUser ? (
+      {loading ? (
+        <Spinner />
+      ) : currentUser ? (
         <>
           {listData.length > 0 ? (
             <div>
@@ -82,35 +83,45 @@ const Orders = () => {
                 <div
                   style={{
                     display: "flex",
-                    width: "70%",
-                    flexDirection: "row",
+                    width: "83%",
                     alignItems: "center",
                     justifyContent: "space-between",
+                    fontWeight: "400",
                   }}
                 >
-                  <h1>Your orders</h1>
-                  <h5
-                    style={{ fontWeight: "600" }}
-                  >{`Order Id: ${currentUser.id}`}</h5>
+                  <h2>Your orders</h2>
+                  <h5>{`Order Id: ${currentUser.id}`}</h5>
                 </div>
-                {listData.map((item) =>
-                  item.cartItems.map((c, idx) => (
-                    <Container key={idx}>
-                      <ImageContainer>
-                        <img src={c.imageUrl} alt={c.name} />
-                      </ImageContainer>
-                      <BaseSpan> {c.name} </BaseSpan>
-                      <Quantity>
-                        <Value>Qty : {c.quantity}</Value>
-                      </Quantity>
-                      <BaseSpan> {c.price} $</BaseSpan>
-                    </Container>
-                  ))
-                )}
+
+                {listData.map((item, idx) => (
+                  <OrderContainer key={idx}>
+                    <OrderList item={item} />
+                    <div
+                      style={{
+                        display: "flex",
+                        width: "70%",
+                        alignItems: "space-between",
+                        justifyContent: "space-between",
+                        marginBottom: "3%",
+                        padding: "15px 0 90px 0",
+                      }}
+                    >
+                      <span style={{ marginLeft: "-5%" }}>
+                        {moment.unix(item.created).format("MM/D/YY ,  h:mma")}
+                      </span>
+
+                      <span
+                        style={{
+                          marginRight: "0%",
+                          fontWeight: "500",
+                        }}
+                      >
+                        Amount Paid : {item.amount / 100}$
+                      </span>
+                    </div>
+                  </OrderContainer>
+                ))}
               </OrderContainer>
-              <Amount>
-                <h2>Amount Paid : {amt / 100}$</h2>
-              </Amount>
             </div>
           ) : (
             <div

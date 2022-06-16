@@ -3,7 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../utils/firebase/firebase.utils";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, doc, serverTimestamp } from "firebase/firestore";
 
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
@@ -46,7 +46,7 @@ const PaymentForm = () => {
       return res.json();
     });
 
-    console.log(response);
+    // console.log(response);
 
     const clientSecret = response.paymentIntent.client_secret;
 
@@ -58,7 +58,7 @@ const PaymentForm = () => {
         },
       },
     });
-    console.log(paymentResult);
+    // console.log(paymentResult);
 
     setIsProcessingPayment(false);
 
@@ -76,13 +76,15 @@ const PaymentForm = () => {
         //     created: paymentResult.paymentIntent.created,
         //   });
 
-        // addCollectionAndDocuments("orders", [
-        //   {
-        //     cartItems: cartItems,
-        //     amount: paymentResult.paymentIntent.amount,
-        //     created: paymentResult.paymentIntent.created,
-        //   },
-        // ]);
+        // const orderRef = doc(db, "users", currentUser.id);
+        // // .collection("orders");
+        // console.log(orderRef);
+        // addDoc(orderRef, {
+        //   cartItems: cartItems,
+        //   amount: paymentResult.paymentIntent.amount,
+        //   created: paymentResult.paymentIntent.created,
+        // });
+
         await addDoc(collection(db, "orders"), {
           id: currentUser.id,
           cartItems: cartItems,
