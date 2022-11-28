@@ -23,6 +23,16 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
+**Features-**
+
+- Login/Signup using firebase
+
+- Viewing of different item-directories, category-items and component items with assets and data stored on firestore db
+
+- Complete cart functionality for adding and checkout items and manipulating items quanity.
+
+- State management of app done using redux and orders history page available for the successful orders.
+
 &nbsp;
 
 ## **Live preview of the application -**
@@ -56,6 +66,20 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 **Component Preview -**
 
 ![Component](markdown_assets/component.png)
+
+&nbsp;
+
+**_Future Updates-_**
+
+- Will make the site responsive for all the screens."
+
+- Add a new dummy payment gateway for making orders
+
+&nbsp;
+
+## `Feel free to give suggestions and advices` 😀
+
+&nbsp;
 
 &nbsp;
 
