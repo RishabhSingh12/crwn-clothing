@@ -25,7 +25,7 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 **Features-**
 
-- Login/Signup using firebase
+- Login/Signup for the store done using firebase authentication service.
 
 - Viewing of different item-directories, category-items and component items with assets and data stored on firestore db
 
@@ -43,27 +43,27 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 ## **Image preview of the application-**
 
-**ItemsDirectory-**
+## **ItemsDirectory-**
 
 ![ItemsDirectory](markdown_assets/directory.png.png)
 
-**CategoryItems Preview -**
+## **CategoryItems Preview -**
 
 ![Category-directories](markdown_assets/large.png.png)
 
-**Login/Signup Preview -**
+## **Login/Signup Preview -**
 
 ![Login/Signup](markdown_assets/login-signup.png.png)
 
-**Orders Preview -**
+## **Orders Preview -**
 
 ![Orders](markdown_assets/orders.png.png)
 
-**CheckoutItems Preview -**
+## **CheckoutItems Preview -**
 
 ![Checkout](markdown_assets/checkout.png)
 
-**Component Preview -**
+## **Component Preview -**
 
 ![Component](markdown_assets/component.png)
 
@@ -71,7 +71,7 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 **_Future Updates-_**
 
-- Will make the site responsive for all the screens."
+- Will make the site responsive for all the screens.
 
 - Add a new dummy payment gateway for making orders
 
