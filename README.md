@@ -33,6 +33,18 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 ## **Image preview of the application-**
 
+**ItemsDirectory-**
+
+![ItemsDirectory](markdown_assets/directory.png.png)
+
+**CategoryItems Preview -**
+
+![Category-directories](markdown_assets/large.png.png)
+
+**Login/Signup Preview -**
+
+![Login/Signup](markdown_assets/login-signup.png.png)
+
 &nbsp;
 
 # How to fork and clone
