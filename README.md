@@ -27,7 +27,7 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 ## **Live preview of the application -**
 
-### [Crwn-Cloth-Store]("https://crwn-clothing-shop.netlify.app)
+[Crwn-Cloth-Store]("https://crwn-clothing-shop.netlify.app)
 
 &nbsp;
 
