@@ -31,6 +31,8 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 &nbsp;
 
+## **Image preview of the application-**
+
 &nbsp;
 
 # How to fork and clone
