@@ -45,6 +45,10 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 ![Login/Signup](markdown_assets/login-signup.png.png)
 
+**Orders Preview -**
+
+![Orders](markdown_assets/orders.png.png)
+
 &nbsp;
 
 # How to fork and clone
