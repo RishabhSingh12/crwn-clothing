@@ -53,6 +53,10 @@ An e-commerce cloth store webaite which contains different categories of cloth i
 
 ![Checkout](markdown_assets/checkout.png)
 
+**Component Preview -**
+
+![Component](markdown_assets/component.png)
+
 &nbsp;
 
 # How to fork and clone
