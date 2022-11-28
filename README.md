@@ -2,7 +2,7 @@
 
 ## Description -
 
-An e-commerce cloth store webaite which contains different categories of cloth items.
+An e-commerce cloth store webaite which contains different categories of cloth items where users can signin / signup , view different categories of items , add/checkout items from cart and make orders from the site.
 
 &nbsp;
 
